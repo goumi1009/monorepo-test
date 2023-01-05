@@ -18,11 +18,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       {\
         "name": "@pikachu/web",\
         "reference": "workspace:apps/pikachu"\
+      },\
+      {\
+        "name": "@pikachu/lib",\
+        "reference": "workspace:packages/lib"\
       }\
     ],\
     "enableTopLevelFallback": true,\
     "ignorePatternData": "(^(?:\\\\.yarn\\\\/sdks(?:\\\\/(?!\\\\.{1,2}(?:\\\\/|$))(?:(?:(?!(?:^|\\\\/)\\\\.{1,2}(?:\\\\/|$)).)*?)|$))$)",\
     "fallbackExclusionList": [\
+      ["@pikachu/lib", ["workspace:packages/lib"]],\
       ["@pikachu/web", ["workspace:apps/pikachu"]],\
       ["monorepo-test", ["workspace:."]]\
     ],\
@@ -386,11 +391,22 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["@pikachu/lib", [\
+        ["workspace:packages/lib", {\
+          "packageLocation": "./packages/lib/",\
+          "packageDependencies": [\
+            ["@pikachu/lib", "workspace:packages/lib"],\
+            ["typescript", "patch:typescript@npm%3A4.9.4#~builtin<compat/typescript>::version=4.9.4&hash=ad5954"]\
+          ],\
+          "linkType": "SOFT"\
+        }]\
+      ]],\
       ["@pikachu/web", [\
         ["workspace:apps/pikachu", {\
           "packageLocation": "./apps/pikachu/",\
           "packageDependencies": [\
             ["@pikachu/web", "workspace:apps/pikachu"],\
+            ["@pikachu/lib", "workspace:packages/lib"],\
             ["@playwright/test", "npm:1.29.1"],\
             ["@rushstack/eslint-patch", "npm:1.2.0"],\
             ["@types/jsdom", "npm:20.0.1"],\

@@ -289,10 +289,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@pikachu/lib@workspace:^, @pikachu/lib@workspace:packages/lib":
+  version: 0.0.0-use.local
+  resolution: "@pikachu/lib@workspace:packages/lib"
+  dependencies:
+    typescript: ^4.9.3
+  languageName: unknown
+  linkType: soft
+
 "@pikachu/web@workspace:apps/pikachu":
   version: 0.0.0-use.local
   resolution: "@pikachu/web@workspace:apps/pikachu"
   dependencies:
+    "@pikachu/lib": "workspace:^"
     "@playwright/test": ^1.28.1
     "@rushstack/eslint-patch": ^1.1.4
     "@types/jsdom": ^20.0.1
@@ -3885,7 +3894,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:^4.9.4":
+"typescript@npm:^4.9.3, typescript@npm:^4.9.4":
   version: 4.9.4
   resolution: "typescript@npm:4.9.4"
   bin:
@@ -3905,7 +3914,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@^4.9.4#~builtin<compat/typescript>":
+"typescript@patch:typescript@^4.9.3#~builtin<compat/typescript>, typescript@patch:typescript@^4.9.4#~builtin<compat/typescript>":
   version: 4.9.4
   resolution: "typescript@patch:typescript@npm%3A4.9.4#~builtin<compat/typescript>::version=4.9.4&hash=ad5954"
   bin:
