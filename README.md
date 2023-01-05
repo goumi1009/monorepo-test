@@ -78,3 +78,12 @@ tsconfig.json 파일 생성후 설정값 넣기
 }
 ```
 
+index.ts 생성하고 간단한 코드 넣기
+
+```
+export const helloWorld = () => {
+  console.log("hello world from lib");
+  return "hello world from lib";
+};
+```
+
