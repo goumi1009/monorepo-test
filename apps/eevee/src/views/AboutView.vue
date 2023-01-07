@@ -1,11 +1,10 @@
 <script setup>
 import { helloWorld } from "@pokemon/lib";
 </script>
-
 <template>
   <div class="about">
     <h1>This is an about page</h1>
-    <h3>{{ helloWorld() }}</h3>
+    <h2>{{ helloWorld() }}</h2>
   </div>
 </template>
 
